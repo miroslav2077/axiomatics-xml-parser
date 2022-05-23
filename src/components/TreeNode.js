@@ -9,10 +9,10 @@ const TreeNode = ({ xmlObject, parentKey }) => {
           {key === "#text" ? (
             xmlObject[key]
           ) : (
-            <>
+            <ul className={`text-white ${parentKey ? "" : "pl-8"}`}>
               {typeof xmlObject[key] === "object" ||
               Array.isArray(xmlObject[key]) ? (
-                <ul className={`text-white ${parentKey ? "" : "pl-8"} `}>
+                <>
                   {Array.isArray(xmlObject[key]) ? (
                     <TreeNode xmlObject={xmlObject[key]} parentKey={key} />
                   ) : (
@@ -25,7 +25,7 @@ const TreeNode = ({ xmlObject, parentKey }) => {
                       </TreeNodeWrap>
                     </li>
                   )}
-                </ul>
+                </>
               ) : (
                 !key.startsWith("@_") &&
                 key !== "#text" && (
@@ -36,7 +36,7 @@ const TreeNode = ({ xmlObject, parentKey }) => {
                   </li>
                 )
               )}
-            </>
+            </ul>
           )}
         </>
       );
