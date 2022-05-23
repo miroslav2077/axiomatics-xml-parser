@@ -35,12 +35,22 @@ function App() {
   }, [selectedFile]);
 
   return (
-    <div className="container mx-auto px-4 bg-slate-600">
-      <div className="flex flex-col space-y-8">
-        <h1 className="text-3xl font-bold">XML Tree Visualizer</h1>
-        <input type="file" onChange={onSelectedFileChange} />
+    <div className="container relative mx-auto bg-slate-600 my-10 rounded-2xl p-10">
+      <div className="absolute w-full -top-1 left-0 right-0 bg-slate-200 flex space-x-2 items-center px-2 h-8 rounded-t-2xl">
+        <div className="bg-red-500 rounded-full w-3 h-3"></div>
+        <div className="bg-yellow-400 rounded-full w-3 h-3"></div>
+        <div className="bg-green-500 rounded-full w-3 h-3"></div>
 
-        <TreeNode className="break-all" xmlObject={xmlObject} />
+        <h1 className="text-lg font-bold pl-1">XML Tree Visualizer</h1>
+      </div>
+      <div className="flex flex-col pt-8 space-y-8">
+        <div className="text-white">
+          <input type="file" onChange={onSelectedFileChange} />
+        </div>
+
+        <div className="break-all -ml-8">
+          <TreeNode xmlObject={xmlObject} />
+        </div>
       </div>
     </div>
   );
