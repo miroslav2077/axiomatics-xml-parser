@@ -40,7 +40,7 @@ function App() {
         <h1 className="text-3xl font-bold">XML Tree Visualizer</h1>
         <input type="file" onChange={onSelectedFileChange} />
 
-        <TreeNode xmlObject={xmlObject} />
+        <TreeNode className="break-all" xmlObject={xmlObject} />
       </div>
     </div>
   );
