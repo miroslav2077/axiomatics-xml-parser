@@ -7,14 +7,26 @@ const TreeNodeWrap = ({ propertyName, attributes, children }) => {
         attributes
       ) : (
         <>
-          <span className="text-white">{"<"}</span>
-          <span className="text-pink-400">{propertyName}</span>
+          <span className="text-white">
+            {propertyName.startsWith("?") ? "<?" : "<"}
+          </span>
+          <span className="text-pink-400">
+            {propertyName === "?xml" ? "xml" : propertyName}
+          </span>
           {attributes && <TreeAttributes xmlNode={attributes} />}
-          <span className="text-white">{">"}</span>
+          <span className="text-white">
+            {propertyName.startsWith("?") ? "?>" : ">"}
+          </span>
           {children}
-          <span className="text-white">{"</"}</span>
-          <span className="text-pink-400">{propertyName}</span>
-          <span className="text-white">{">"}</span>
+          {propertyName.startsWith("?") ? (
+            ""
+          ) : (
+            <>
+              <span className="text-white">{"</"}</span>
+              <span className="text-pink-400">{propertyName}</span>
+              <span className="text-white">{">"}</span>
+            </>
+          )}
         </>
       )}
     </>
