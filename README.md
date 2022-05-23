@@ -3,7 +3,7 @@
 
 Visualize the XML tree as if it were on a small IDE
 
-Color scheme inspired by <a href="https://draculatheme.com" target="_blank">https://draculatheme.com</a>
+Color scheme inspired by <a href="https://draculatheme.com" target="_blank">Dracula Theme</a>
 
 Have fun!
 
