@@ -1,3 +1,4 @@
+import React from "react";
 import TreeNodeWrap from "./TreeNodeWrap";
 
 const TreeNode = ({ xmlObject, parentKey }) => {
@@ -5,7 +6,7 @@ const TreeNode = ({ xmlObject, parentKey }) => {
     xmlObject &&
     Object.keys(xmlObject).map((key, value) => {
       return (
-        <>
+        <React.Fragment key={key}>
           {key === "#text" ? (
             xmlObject[key]
           ) : (
@@ -38,7 +39,7 @@ const TreeNode = ({ xmlObject, parentKey }) => {
               )}
             </ul>
           )}
-        </>
+        </React.Fragment>
       );
     })
   );
