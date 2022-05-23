@@ -6,16 +6,16 @@ import TreeNode from "./components/TreeNode";
 
 import { XMLParser } from "fast-xml-parser";
 
+const fr = new FileReader();
+
+// xmlparser options
+const options = {
+  ignoreAttributes: false,
+};
+
+const parser = new XMLParser(options);
+
 function App() {
-  const fr = new FileReader();
-
-  // xmlparser options
-  const options = {
-    ignoreAttributes: false,
-  };
-
-  const parser = new XMLParser(options);
-
   // initialize xml string as empty
   const [selectedFile, setSelectedFile] = useState("");
 
@@ -26,7 +26,9 @@ function App() {
     fr.onload = (loadedFile) => {
       setSelectedFile(loadedFile.target.result);
     };
-    fr.readAsText(e.target.files[0]);
+    if (e.target.files.length) {
+      fr.readAsText(e.target.files[0]);
+    }
   };
 
   useEffect(() => {
