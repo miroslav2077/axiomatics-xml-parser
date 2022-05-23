@@ -36,7 +36,7 @@ function App() {
   }, [selectedFile]);
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 bg-slate-600">
       <div className="flex flex-col space-y-8">
         <h1 className="text-3xl font-bold">
           XML Tree Visualizer

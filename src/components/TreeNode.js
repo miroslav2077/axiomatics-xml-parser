@@ -4,11 +4,10 @@ import TreeNodeWrap from './TreeNodeWrap';
 const TreeNode = ({xmlObject}) => {
     return (xmlObject && Object.keys(xmlObject).map((key, value) => {
         return (
-          <ul className="pl-8">
+          <ul className="text-white pl-8">
             {(typeof xmlObject[key] === 'object' || Array.isArray(xmlObject[key])) ?
             <li>
-                <TreeNodeWrap propertyName={key}>
-                    <TreeAttributes xmlNode={xmlObject[key]} />
+                <TreeNodeWrap propertyName={key} attributes={xmlObject[key]}>
                     <TreeNode xmlObject={xmlObject[key]} />
                 </TreeNodeWrap>
             </li> : 
