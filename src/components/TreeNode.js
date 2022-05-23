@@ -11,11 +11,12 @@ const TreeNode = ({xmlObject}) => {
                     <TreeNode xmlObject={xmlObject[key]} />
                 </TreeNodeWrap>
             </li> : 
-            <li>
+            (!key.startsWith('@_') && <li>
                 <TreeNodeWrap propertyName={key}>
                     {xmlObject[key]}
                 </TreeNodeWrap>
-            </li>}
+            </li>)
+            }
           </ul>
         );
     }));
