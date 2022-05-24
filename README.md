@@ -1,5 +1,5 @@
 # XML Parser 🚀
-##### Axiomatic Challenge 👨‍💻
+##### Axiomatics Challenge 👨‍💻
 
 Visualize the XML tree as if it were on a small IDE
 
